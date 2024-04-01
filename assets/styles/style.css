@@ -1,0 +1,110 @@
+.container {
+    margin: 0 auto;
+}
+.editor {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 1920px;
+}
+.editor__info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 20px;
+}
+.editor__toggle {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    user-select: none;
+    transition: .3s all ease 0s;
+}
+.editor__toggle:hover {
+    transform: scale(1.1);
+}
+.editor__toggle:active,.editor__toggle:focus {
+    outline: none
+}
+
+.editor__picker {
+    width: var(--picker-width);
+    height: var(--picker-height);
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    cursor:url('/assets/icons/ColorPickerCursor.svg') 0 16,default;
+    border-radius: 50%;
+}
+
+.editor__picker svg {
+    width: var(--picker-width);
+    height: var(--picker-height);
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 50%;
+    z-index: 1;
+    position: relative;
+}
+
+.editor__picker svg path {
+    fill: var(--fill-color)
+}
+
+.editor__color {
+    font-size: 30px;
+    font-weight: 700;
+    width: 50%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    display: block;
+}
+
+.editor__color::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: var(--preview-color);
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #000;
+}
+
+.editor__body {
+    overflow: hidden;
+    position: relative;
+}
+
+.picker__color {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 5px 10px;
+    user-select: none;
+}
+
+.zoom-canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
